@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { fetchProperty } from "@/utils/request"
-import { useParams } from "next/navigation"
 import PropertyHeaderImage from "@/components/PropertyHeaderImage"
 import Link from "next/link"
 import { FaArrowLeft } from "react-icons/fa"
 import PropertyDetails from "@/components/PropertyDetails"
 import Spinner from "@/components/Spinner"
+import { useParams } from "next/navigation"
 
 const PropertyPage = () => {
   const { id } = useParams()
