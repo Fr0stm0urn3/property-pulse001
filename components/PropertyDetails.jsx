@@ -74,7 +74,7 @@ const PropertyDetails = ({ property }) => {
             <span className="hidden sm:inline">sqft</span>
           </p>
         </div>
-        <p className="text-gray-500 mb-4">{property.description}</p>
+        <p className="text-gray-500 mb-4 text-center">{property.description}</p>
       </div>
 
       {property.amenities.length > 0 && (
