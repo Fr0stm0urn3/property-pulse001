@@ -32,8 +32,6 @@ export const GET = async (request) => {
 
     const properties = await Property.find(query)
 
-    console.log(location, propertyType)
-
     return new Response(JSON.stringify(properties), { status: 200 })
   } catch (error) {
     console.log(error)
