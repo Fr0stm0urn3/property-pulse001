@@ -64,8 +64,6 @@ export const POST = async (request) => {
       owner: userId,
     }
 
-    //Upload images(s) to Clooudinary
-
     // Upload image(s) to Cloudinary
     const imageUploadPromises = []
 
