@@ -10,8 +10,6 @@ const PropertyImages = ({ images }) => {
             <Item original={images[0]} thumbnail={images[0]} width="1000" height="600">
               {({ ref, open }) => (
                 <Image
-                  ref={ref}
-                  onClick={open}
                   src={images[0]}
                   alt=""
                   width={0}
@@ -31,20 +29,16 @@ const PropertyImages = ({ images }) => {
                     images.length === 3 && index === 2 ? "col-span-2" : "col-span-1"
                   }`}
                 >
-                  <Item original={image} thumbnail={image} width="1000" height="600">
-                    {({ ref, open }) => (
-                      <Image
-                        ref={ref}
-                        onClick={open}
-                        src={image}
-                        className="object-cover h-[400px] w-full rounded-xl "
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        alt=""
-                        priority={true}
-                      />
-                    )}
+                  <Item original={image} thumbnail={image} width="" height="">
+                    <Image
+                      src={image}
+                      className="object-cover h-[400px] w-full rounded-xl "
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      priority={true}
+                    />
                   </Item>
                 </div>
               ))}

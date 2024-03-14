@@ -9,12 +9,13 @@ const Properties = () => {
   const [properties, setProperties] = useState([])
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
-  const [pageSize, setPageSize] = useState(1)
+  const [pageSize, setPageSize] = useState(3)
   const [totalItems, setTotalItems] = useState(0)
 
   useEffect(() => {
     const fetchProperties = async () => {
       try {
+        setLoading(true)
         const res = await fetch(`/api/properties?page=${page}&pageSize=${pageSize}`)
 
         if (!res.ok) {
@@ -57,6 +58,7 @@ const Properties = () => {
         pageSize={pageSize}
         totalItems={totalItems}
         onPageChange={handlePageChange}
+        loading={loading}
       />
     </section>
   )

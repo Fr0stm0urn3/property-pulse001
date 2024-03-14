@@ -1,4 +1,6 @@
-const Pagination = ({ page, pageSize, totalItems, onPageChange }) => {
+import Spinner from "@/components/Spinner"
+
+const Pagination = ({ page, pageSize, totalItems, onPageChange, loading }) => {
   const totalPages = Math.ceil(totalItems / pageSize)
 
   const handlePageChange = (newPage) => {
@@ -8,7 +10,7 @@ const Pagination = ({ page, pageSize, totalItems, onPageChange }) => {
   }
 
   return (
-    <section className="container mx-auto flex justify-center items-center my-8">
+    <section className="container mx-auto flex justify-center items-center my-8 mt-20 ">
       <button
         className="mr-2 px-2 py-1 border border-gray-300 rounded"
         onClick={() => handlePageChange(page - 1)}
@@ -18,8 +20,9 @@ const Pagination = ({ page, pageSize, totalItems, onPageChange }) => {
       </button>
 
       <span className="mx-2">
-        Page {page} of {totalPages ? totalPages : page}
+        Page {page} of {totalPages}
       </span>
+
       <button
         className="ml-2 px-2 py-1 border border-gray-300 rounded"
         onClick={() => handlePageChange(page + 1)}

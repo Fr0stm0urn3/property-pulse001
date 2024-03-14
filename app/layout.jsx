@@ -20,9 +20,11 @@ const MainLayout = ({ children }) => {
         <html lang="en">
           <body>
             <Navbar />
-            {children}
-            <Footer />
-            <ToastContainer />
+            <div className="flex flex-col justify-between min-h-screen">
+              {children}
+              <ToastContainer />
+              <Footer />
+            </div>
           </body>
         </html>
       </AuthProvider>
